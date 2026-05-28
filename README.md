@@ -268,3 +268,12 @@ If you want to transition from our landmark geometric feature vectors to a full 
 
 ### 2. Customizing AWS Serverless backend
 To connect to your own server, deploy an AWS Lambda function with an API Gateway. Configure the Lambda function to listen for `POST /attendance` requests, extract `records`, and run a batch write into your **DynamoDB Datalake** table. Once deployed, paste your API Gateway endpoint URL in the Settings tab of the app to sync live.
+
+---
+
+## Current Prototype Limitations
+
+- AWS backend deployment is configurable and demonstrated using a prototype sync flow.
+- iOS deployment requires CocoaPods configuration on macOS.
+- Current prototype optimized primarily for Android devices.
+- Additional anti-spoofing models can further improve robustness.

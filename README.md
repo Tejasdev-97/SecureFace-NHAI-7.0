@@ -5,9 +5,20 @@
 
 ---
 
+## 📲 Standalone APK Download
+Before deploying or building the source code, you can download the pre-compiled, fully standalone offline APK and install it directly on any Android device:
+
+👉 **[Download Standalone APK](https://github.com/Tejasdev-97/SecureFace-NHAI-7.0/releases/download/v1.0.0/SecureFace_Standalone.apk)** (96 MB)
+
+> [!NOTE]
+> This APK bundles the offline JavaScript assets, design theme, vector icons, and SQLite engine. Once installed, it works **100% offline** and runs independently without requiring any connection to a development computer or active Metro bundler.
+
+---
+
 ## 📋 Table of Contents
 
 - [1. Overview](#1-overview)
+- [App Screenshots](#-app-screenshots)
 - [2. Technical Specifications & Benchmarks](#2-technical-specifications--benchmarks)
 - [3. Deep Learning & Compression Techniques](#3-deep-learning--compression-techniques)
 - [4. Offline Liveness Anti-Spoofing](#4-offline-liveness-anti-spoofing)
@@ -29,6 +40,37 @@ SecureFace is an off-grid biometric scanning and verification system designed fo
 * **Biometric Accuracy:** Leverages 12-dimensional scale-invariant geometric face feature vectors to prevent false matches.
 * **Dynamic Liveness Challenges:** Dynamic challenge-response blinking, smiling, and head rotation tests block photo/video spoofing.
 * **AWS Integration:** Automatically caches logs on-device and pushes them to your AWS backend once an internet connection is established.
+
+---
+
+## 📱 App Screenshots
+Here is a visual walkthrough of the SecureFace application interface:
+
+| Home Screen | Multi-Angle Face Registration | Offline Attendance Verification |
+| :-: | :-: | :-: |
+| ![Home Screen](./screenshots/home.png) | ![Face Registration](./screenshots/enroll.png) | ![Attendance Verification](./screenshots/verify.png) |
+
+| Logs & Sync | Settings Panel | Registered Personnel List |
+| :-: | :-: | :-: |
+| ![Logs Screen](./screenshots/logs.png) | ![Settings Screen](./screenshots/settings.png) | ![Personnel List](./screenshots/personnel.png) |
+
+### 🛠️ How to Add Screenshots to Your Repository:
+1. Create a folder named `screenshots` in the root of your project: `SecureFace/screenshots/`.
+2. Take screenshots of the app running on your phone, name them exactly:
+   * `home.png`
+   * `enroll.png`
+   * `verify.png`
+   * `logs.png`
+   * `settings.png`
+   * `personnel.png`
+3. Save them into the `screenshots/` folder.
+4. Stage, commit, and push them to GitHub:
+   ```powershell
+   git add screenshots/
+   git commit -m "docs: add app screenshots"
+   git push origin main
+   ```
+   *Once pushed, they will render beautifully in the table above!*
 
 ---
 

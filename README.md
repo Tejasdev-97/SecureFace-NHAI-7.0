@@ -18,6 +18,7 @@ Before deploying or building the source code, you can download the pre-compiled,
 ## 📋 Table of Contents
 
 - [1. Overview](#1-overview)
+  - [How Offline Works](#-how-offline-works-biometric-processing-pipeline)
 - [App Screenshots](#-app-screenshots)
 - [2. Technical Specifications & Benchmarks](#2-technical-specifications--benchmarks)
 - [3. Deep Learning & Compression Techniques](#3-deep-learning--compression-techniques)
@@ -40,6 +41,30 @@ SecureFace is an off-grid biometric scanning and verification system designed fo
 * **Biometric Accuracy:** Leverages 12-dimensional scale-invariant geometric face feature vectors to prevent false matches.
 * **Dynamic Liveness Challenges:** Dynamic challenge-response blinking, smiling, and head rotation tests block photo/video spoofing.
 * **AWS Integration:** Automatically caches logs on-device and pushes them to your AWS backend once an internet connection is established.
+
+### 🔄 How Offline Works (Biometric Processing Pipeline)
+
+Here is a simplified flowchart of how SecureFace processes and secures attendance data fully offline, without any external servers or network dependencies:
+
+```mermaid
+graph TD
+    A[Camera Feed] --> B[Face Detection <br/> <i>GMS ML Kit SSD</i>]
+    B --> C[Liveness Detection <br/> <i>Blink / Smile / Nod Challenges</i>]
+    C --> D[Face Recognition <br/> <i>12-D Coordinate Projection</i>]
+    D --> E[SQLite Database <br/> <i>Local Offline Logs Storage</i>]
+    E --> F[Sync Later <br/> <i>Push to AWS/Datalake when online</i>]
+
+    style A fill:#ECEFF1,stroke:#37474F,stroke-width:2px
+    style B fill:#E1F5FE,stroke:#0288D1,stroke-width:2px
+    style C fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px
+    style D fill:#FFF3E0,stroke:#F57C00,stroke-width:2px
+    style E fill:#EDE7F6,stroke:#5E35B1,stroke-width:2px
+    style F fill:#FCE4EC,stroke:#C2185B,stroke-width:2px
+```
+
+```text
+Camera ➔ Face Detection ➔ Liveness Challenge ➔ Recognition Match ➔ SQLite Storage ➔ AWS/Datalake Sync
+```
 
 ---
 

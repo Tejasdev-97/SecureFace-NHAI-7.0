@@ -48,21 +48,21 @@ Here is a visual walkthrough of the SecureFace application interface:
 
 | Home Screen | Multi-Angle Face Registration | Offline Attendance Verification |
 | :-: | :-: | :-: |
-| ![Home Screen](./screenshots/home.png) | ![Face Registration](./screenshots/enroll.png) | ![Attendance Verification](./screenshots/verify.png) |
+| <img src="./screenshots/home.jpeg" alt="Home Screen" height="400" /> | <img src="./screenshots/enroll.jpeg" alt="Face Registration" height="400" /> | <img src="./screenshots/verify.jpeg" alt="Attendance Verification" height="400" /> |
 
 | Logs & Sync | Settings Panel | Registered Personnel List |
 | :-: | :-: | :-: |
-| ![Logs Screen](./screenshots/logs.png) | ![Settings Screen](./screenshots/settings.png) | ![Personnel List](./screenshots/personnel.png) |
+| <img src="./screenshots/logs.jpeg" alt="Logs Screen" height="400" /> | <img src="./screenshots/settings.jpeg" alt="Settings Screen" height="400" /> | <img src="./screenshots/personnel.jpeg" alt="Personnel List" height="400" /> |
 
 ### 🛠️ How to Add Screenshots to Your Repository:
 1. Create a folder named `screenshots` in the root of your project: `SecureFace/screenshots/`.
 2. Take screenshots of the app running on your phone, name them exactly:
-   * `home.png`
-   * `enroll.png`
-   * `verify.png`
-   * `logs.png`
-   * `settings.png`
-   * `personnel.png`
+   * `home.jpeg`
+   * `enroll.jpeg`
+   * `verify.jpeg`
+   * `logs.jpeg`
+   * `settings.jpeg`
+   * `personnel.jpeg`
 3. Save them into the `screenshots/` folder.
 4. Stage, commit, and push them to GitHub:
    ```powershell

@@ -1,0 +1,82 @@
+apply plugin: "com.android.application"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "com.facebook.react"
+
+/**
+ * SecureFace — App-level build configuration
+ * Targets Android 8.0+ (minSdk 26) as per NHAI Hackathon requirement
+ */
+react {
+    // JS bundler settings
+}
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+
+    namespace "com.secureface"
+
+    defaultConfig {
+        applicationId "com.nhai.secureface"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        // Enable multidex for large dependency sets
+        multiDexEnabled true
+
+        // react-native-camera has two flavors: 'general' and 'mlkit'.
+        // We pick 'general' (no MLKit dependency) for a lighter offline build.
+        missingDimensionStrategy 'react-native-camera', 'general'
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            // Use your own keystore for production builds
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    packagingOptions {
+        // Required by react-native-camera
+        pickFirst '**/libjsc.so'
+        pickFirst '**/libc++_shared.so'
+    }
+}
+
+dependencies {
+    // React Native core
+    implementation("com.facebook.react:react-android")
+    implementation("com.facebook.react:hermes-android")
+
+    // SQLite storage
+    implementation("androidx.sqlite:sqlite:2.4.0")
+
+    // Kotlin standard library
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+
+    // MultiDex
+    implementation("androidx.multidex:multidex:2.0.1")
+}
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+// Copies icon font files into APK assets so vector icons render correctly
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

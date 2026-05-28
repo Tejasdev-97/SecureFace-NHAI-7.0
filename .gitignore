@@ -1,0 +1,61 @@
+# React Native
+node_modules/
+.bundle/
+.expo/
+
+# Build outputs
+android/app/build/
+android/build/
+android/.gradle/
+android/local.properties
+ios/build/
+ios/Pods/
+ios/*.xcworkspace
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Metro bundler
+.metro-health-check*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+coverage/
+
+# ENV files (add your own .env)
+.env
+.env.local
+
+# AI Models (large binary files — download separately)
+*.tflite
+*.onnx
+*.pb
+*.bin
+
+# SQLite dev databases
+*.db
+*.db-journal

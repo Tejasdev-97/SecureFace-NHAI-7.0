@@ -8,7 +8,7 @@
 ## 📲 Standalone APK Download
 Before deploying or building the source code, you can download the pre-compiled, fully standalone offline APK and install it directly on any Android device:
 
-👉 **[Download Standalone APK](https://github.com/Tejasdev-97/SecureFace-NHAI-7.0/releases/download/v1.0.0/SecureFace_Standalone.apk)** (96 MB)
+👉 **[Download Standalone APK](https://github.com/Tejasdev-97/SecureFace-NHAI-7.0/releases/download/v1.0.0/SecureFace_Standalone.apk)** (16 MB)
 
 > [!NOTE]
 > This APK bundles the offline JavaScript assets, design theme, vector icons, and SQLite engine. Once installed, it works **100% offline** and runs independently without requiring any connection to a development computer or active Metro bundler.
